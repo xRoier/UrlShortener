@@ -3,7 +3,7 @@ using LinqToDB.Configuration;
 using LinqToDB.Data;
 using UrlShortener.Interfaces;
 
-namespace UrlShortener;
+namespace UrlShortener.Services;
 
 public class MySqlInit
 {
