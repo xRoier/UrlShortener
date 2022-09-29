@@ -26,10 +26,10 @@ You can find the configuration file as ``appsettings.json``
   "NotFoundResponse": "Nothing Here"
 }
 ```
-<h5>The only interesting things in here:</h5>
-<h4>**MySQL Section**: ``It contains the MySQL connection values.``</h4>
-<h4>**RunningPort**: ``It defines in what port the program should run (5000 by default).``</h4>
-<h4>**NotFoundResponse**: ``It defines the response that the program should display to a user when they try to open an invalid URL.``</h4>
+The only interesting things in here:
+**MySQL Section**: ``It contains the MySQL connection values.``
+**RunningPort**: ``It defines in what port the program should run (5000 by default).``
+**NotFoundResponse**: ``It defines the response that the program should display to a user when they try to open an invalid URL.``
 _Everything else is just Asp.NET junky stuff, you can ignore that._
 
 ## Executing
