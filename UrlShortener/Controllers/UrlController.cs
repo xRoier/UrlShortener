@@ -8,6 +8,11 @@ namespace UrlShortener.Controllers;
 [ApiController]
 public class UrlController : ControllerBase
 {
+    private readonly IConfiguration _configuration;
+
+    public UrlController(IConfiguration configuration)
+        => _configuration = configuration;
+
     [HttpGet("{id}")]
     public ActionResult Get(string id)
     {
@@ -15,12 +20,12 @@ public class UrlController : ControllerBase
         var query = db.GetTable<Url>().FirstOrDefault(x => x.Id == id);
 
         if (query == null)
-            return NotFound("Nothing here");
+            return NotFound(_configuration["NotFoundResponse"]);
 
         if (query.TimeToLive == null || query.TimeToLive > DateTime.Now)
             return Redirect(query.RedirectUrl);
 
         db.Delete(query);
-        return NotFound("Nothing here");
+        return NotFound(_configuration["NotFoundResponse"]);
     }
 }

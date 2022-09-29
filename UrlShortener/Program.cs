@@ -1,7 +1,7 @@
 using UrlShortener.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.UseUrls($"http://*:{builder.Configuration["RunningPort"]}");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
