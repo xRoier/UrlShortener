@@ -5,9 +5,9 @@ using UrlShortener.Interfaces;
 
 namespace UrlShortener;
 
-public class MySqlController
+public class MySqlInit
 {
-    public MySqlController(IConfiguration configuration)
+    public MySqlInit(IConfiguration configuration)
         => DataConnection.DefaultSettings = new DbSettings(configuration);
 
     public void CreateDatabase()
